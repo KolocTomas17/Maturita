@@ -19,4 +19,18 @@ router.get('/:id/:name', (req, res) => {
     res.send('GET CATS' + req.params.id + req.params.name);
   });
 
+  router.delete('/:id', (req, res) => {
+    res.send('DELETE CAT' + req.params.id);
+  });
+
+  router.put('/:id', (req, res) => {
+    res.send('Update CAT ' + req.params.id);
+  });
+
+  router.post('/', (req, res) => {
+    res.send('CREATED CAT ');
+  });
+  
+  
+
 module.exports = router;
