@@ -27,6 +27,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//kopirovat ze stranky mongoosejs.com
+const mongoose = require('mongoose');
+mongoose
+.connect('mongodb+srv://admin:adminadmin@cluster0.ncmc5t2.mongodb.net/pripravamat?retryWrites=true&w=majority')
+.then(() => console.log("Database connected"))
+.catch((err) => console.log(err));
+
 
 //zajima nas
 app.use('/', indexRouter);

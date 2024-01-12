@@ -6,6 +6,7 @@ const catsController = require("../controllers/cats");
 
 router.get('/', catsController.getAllCats);
 
+// : ocekavame parametr, za ktery se dosazuje, muze se menit
 router.get('/:id', catsController.getCatById);
 
 router.delete('/:id', catsController.deleteCat);
