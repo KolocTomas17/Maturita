@@ -14,7 +14,7 @@ exports.getAllCats = async (req, res) => {
     res.status(500).send(error);
   }
   };
-
+ 
   exports.getCatById = async (req, res) => {
     try {
       const result = await Cat.findById(req.params.id);
