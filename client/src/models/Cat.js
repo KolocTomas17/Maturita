@@ -7,6 +7,11 @@ export const getAllCats = async () => {
     method: "GET",
   });
   const data = await req.json();
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload
+  }
 };
 
 export const getCatById = async (id) => {
@@ -18,6 +23,11 @@ export const getCatById = async (id) => {
     method: "GET",
   });
   const data = await req.json();
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload
+  }
 };
 
 export const createCat = async (fomrData) => {
@@ -30,6 +40,11 @@ export const createCat = async (fomrData) => {
     body: JSON.stringify(fomrData),
   });
   const data = await req.json();
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload
+  }
 };
 
 export const updateCat = async (id, fomrData) => {
@@ -42,6 +57,11 @@ export const updateCat = async (id, fomrData) => {
     body: JSON.stringify(fomrData),
   });
   const data = await req.json();
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload
+  }
 };
 
 export const deleteCat = async (id) => {
@@ -53,4 +73,9 @@ export const deleteCat = async (id) => {
     method: "DELETE",
   });
   const data = await req.json();
+  return {
+    status: req.status,
+    msg: data.msg,
+    payload: data.payload
+  }
 };

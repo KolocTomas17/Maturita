@@ -4,6 +4,7 @@ import CatView from "./CatView/CatView";
 import CatList from "./CatList/CatList";
 import CatCreateForm from "./CatCreateForm/CatCreateForm";
 import CatUpdateForm from "./CatUpdateForm/CatUpdateForm";
+import CreatedCat from "./CatCreateForm/CreatedCat";
 
 export default function AppRouters() {
     return(
@@ -14,6 +15,7 @@ export default function AppRouters() {
                 <Route path="/cats" element={<CatList />} />
                 <Route path="/createcat" element={<CatCreateForm />} />
                 <Route path="/updatecat/:id" element={<CatUpdateForm />} />
+                <Route path="/createdcat/:id" element={<CreatedCat />} />
             </Routes>  
         </BrowserRouter>
     )
