@@ -12,6 +12,14 @@ export default function MainPage() {
              <p>Cat list</p>
             </Link>
 
+            <Link to={"/createstudent"}>
+                <p>Student create form</p>
+            </Link>
+
+            <Link to={"/students"}>
+             <p>Student list</p>
+            </Link>
+
         </>
     )
 }
