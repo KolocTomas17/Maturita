@@ -1,6 +1,7 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { updateStudent, getStudentById } from "../../models/Student";
+import "./StudentUpdateForm.css";
 
 export default function StudentUpdateForm() {
     //useState - vytvoreni promenne v reactu
@@ -65,15 +66,15 @@ export default function StudentUpdateForm() {
     return(
         //zmenit obsah u maturity
         <>
-        <h1>Student update form</h1>
-
+        <h1 className="tittle">Student update form</h1>
+        <div className="student-update-form">
         <form>
             
-            <input type="text" required name="name" placeholder="Enter name" defaultValue={student.name} onChange={(e) => handleChange(e)} />
-            <input type="text" required name="lastname" placeholder="Enter lastname" defaultValue={student.name} onChange={(e) => handleChange(e)} />
-            <input type="number" required name="age" placeholder="Enter age" defaultValue={student.age} onChange={(e) => handleChange(e)} />
-            <input type="text" required name="color" placeholder="Enter color" defaultValue={student.color}  onChange={(e) => handleChange(e)}/>
-            <button onClick={handlePost}>
+            <input className="input is-rounded" type="text" required name="name" placeholder="Enter name" defaultValue={student.name} onChange={(e) => handleChange(e)} />
+            <input className="input is-rounded" type="text" required name="lastname" placeholder="Enter lastname" defaultValue={student.lastname} onChange={(e) => handleChange(e)} />
+            <input className="input is-rounded" type="number" required name="age" placeholder="Enter age" defaultValue={student.age} onChange={(e) => handleChange(e)} />
+            <input className="input is-rounded" type="text" required name="color" placeholder="Enter color" defaultValue={student.color}  onChange={(e) => handleChange(e)}/>
+            <button className="button is-light" onClick={handlePost}>
                 Update student
             </button>
         </form>
@@ -82,6 +83,7 @@ export default function StudentUpdateForm() {
         <Link to={"/"}>
             <p>Go back</p>
         </Link>
+        </div>
         </>
     )
 }

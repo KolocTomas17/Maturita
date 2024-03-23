@@ -1,6 +1,7 @@
 import { Link, redirect, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { createStudent } from "../../models/Student";
+import "./StudentCreateForm.css";
 
 export default function StudentCreateForm() {
     //useState - vytvoreni promenne v reactu
@@ -33,15 +34,15 @@ export default function StudentCreateForm() {
     return(
         //zmenit obsah u maturity
         <>
-        <h1>Student create form</h1>
-
+        <h1 className="tittle">Student create form</h1>
+        <div className="student-create-form">
         <form>
             
-            <input type="text" required name="name" placeholder="Enter name" onChange={e => handleChange(e)} />
-            <input type="text" required name="lastname" placeholder="Enter lastname" onChange={e => handleChange(e)} />
-            <input type="number" required name="age" placeholder="Enter age" onChange={e => handleChange(e)} />
-            <input type="text" required name="color" placeholder="Enter color"  onChange={e => handleChange(e)}/>
-            <button onClick={handlePost}>
+            <input className="input is-rounded" type="text" required name="name" placeholder="Enter name" onChange={e => handleChange(e)} />
+            <input className="input is-rounded" type="text" required name="lastname" placeholder="Enter lastname" onChange={e => handleChange(e)} />
+            <input className="input is-rounded" type="number" required name="age" placeholder="Enter age" onChange={e => handleChange(e)} />
+            <input className="input is-rounded" type="text" required name="color" placeholder="Enter color"  onChange={e => handleChange(e)}/>
+            <button className="button is-light" onClick={handlePost}>
                 Create student
             </button>
         </form>
@@ -50,6 +51,7 @@ export default function StudentCreateForm() {
         <Link to={"/"}>
             <p>Go back</p>
         </Link>
+        </div>
         </>
     )
 }

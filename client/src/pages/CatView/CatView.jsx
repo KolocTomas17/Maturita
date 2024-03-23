@@ -75,7 +75,7 @@ export default function CatView() {
                 Napište jméno kočky pro smazání kočky
             </p>
             <input type="text" placeholder={cat.name} onChange={handleChange} />
-            <button onClick={handleDelete}>Smazat kočku</button>
+            <button className="button is-light" onClick={handleDelete}>Smazat kočku</button>
             <p>
                 {info}
             </p>

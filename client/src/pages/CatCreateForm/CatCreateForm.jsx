@@ -1,6 +1,7 @@
 import { Link, redirect, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { createCat } from "../../models/Cat";
+import './CatCreateForm.css';
 
 export default function CatCreateForm() {
     //useState - vytvoreni promenne v reactu
@@ -33,22 +34,28 @@ export default function CatCreateForm() {
     return(
         //zmenit obsah u maturity
         <>
-        <h1>Cat create form</h1>
 
+
+        <h1 className="tittle">Cat create form</h1>
+        <div className="cat-create-form">
         <form>
             
-            <input type="text" required name="name" placeholder="Enter name" onChange={e => handleChange(e)} />
-            <input type="number" required name="legs" placeholder="Enter number of legs" onChange={e => handleChange(e)} />
-            <input type="text" required name="color" placeholder="Enter color"  onChange={e => handleChange(e)}/>
-            <button onClick={handlePost}>
+            <input className="input is-rounded" type="text" required name="name" placeholder="Enter name" onChange={e => handleChange(e)} />
+            <input className="input is-rounded" type="number" required name="legs" placeholder="Enter number of legs" onChange={e => handleChange(e)} />
+            <input className="input is-rounded" type="text" required name="color" placeholder="Enter color"  onChange={e => handleChange(e)}/>
+            <button className="button is-light" onClick={handlePost}>
                 Create cat
             </button>
         </form>
         <p>{info}</p>
 
         <Link to={"/"}>
+
             <p>Go back</p>
         </Link>
+        </div>
+
+       
         </>
     )
 }

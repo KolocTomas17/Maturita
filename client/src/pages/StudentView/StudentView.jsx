@@ -76,7 +76,7 @@ export default function StudentView() {
                 Napište jméno studenta pro smazání studenta
             </p>
             <input type="text" placeholder={student.name} onChange={handleChange} />
-            <button onClick={handleDelete}>Smazat studenta</button>
+            <button className="button is-light" onClick={handleDelete}>Smazat studenta</button>
             <p>
                 {info}
             </p>

@@ -1,6 +1,7 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { updateCat, getCatById } from "../../models/Cat";
+import './CatUpdateForm.css';
 
 export default function CatUpdateForm() {
     //useState - vytvoreni promenne v reactu
@@ -11,11 +12,11 @@ export default function CatUpdateForm() {
     const [loaded, setLoaded] = useState();
     const [cat, setCat] = useState();
     const navigate = useNavigate();
-    
+
     const load = async () => {
         const data = await getCatById(id);
-        if(data.status === 500 || data.status === 404) return setLoaded(null);
-        if(data.status === 200) {
+        if (data.status === 500 || data.status === 404) return setLoaded(null);
+        if (data.status === 200) {
             setCat(data.payload);
             setLoaded(true);
         }
@@ -49,7 +50,7 @@ export default function CatUpdateForm() {
     if (loaded === null) {
         return (
             <>
-            <p>Cat not found</p>
+                <p>Cat not found</p>
             </>
         )
     }
@@ -62,25 +63,26 @@ export default function CatUpdateForm() {
         )
     }
 
-    return(
+    return (
         //zmenit obsah u maturity
         <>
-        <h1>Cat update form</h1>
+            <h1 className="tittle">Cat update form</h1>
+            <div className="cat-update-form">
+            <form>
 
-        <form>
-            
-            <input type="text" required name="name" placeholder="Enter name" defaultValue={cat.name} onChange={(e) => handleChange(e)} />
-            <input type="number" required name="legs" placeholder="Enter number of legs" defaultValue={cat.legs} onChange={(e) => handleChange(e)} />
-            <input type="text" required name="color" placeholder="Enter color" defaultValue={cat.color}  onChange={(e) => handleChange(e)}/>
-            <button onClick={handlePost}>
-                Update cat
-            </button>
-        </form>
-        <p>{info}</p>
+                <input className="input is-rounded" type="text" required name="name" placeholder="Enter name" defaultValue={cat.name} onChange={(e) => handleChange(e)} />
+                <input className="input is-rounded" type="number" required name="legs" placeholder="Enter number of legs" defaultValue={cat.legs} onChange={(e) => handleChange(e)} />
+                <input className="input is-rounded" type="text" required name="color" placeholder="Enter color" defaultValue={cat.color} onChange={(e) => handleChange(e)} />
+                <button className="button is-light" onClick={handlePost}>
+                    Update cat
+                </button>
+            </form>
+            <p>{info}</p>
 
-        <Link to={"/"}>
-            <p>Go back</p>
-        </Link>
+            <Link to={"/"}>
+                <p>Go back</p>
+            </Link>
+            </div>
         </>
     )
 }
