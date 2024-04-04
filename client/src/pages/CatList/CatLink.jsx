@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom"
+import "./CatList.css";
+
 
 export default function CatLink(props) {
 
     return(
         <>
-            <p>Name: {props.name}</p>
-            <Link to={`/cat/${props.id}`}>
+        <div className="box">
+            <p className="subtitle">Name: {props.name}</p>
+            <Link className="cat-container" to={`/cat/${props.id}`}>
                 <p>View cat</p>
             </Link>
+            </div>
         </>
     )
 }

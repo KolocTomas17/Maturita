@@ -5,7 +5,6 @@
   margin: 0 auto;
   padding: 250px;
   outline: none;
-  /* cursor:  default; */
 }
 
 .title {
@@ -29,5 +28,5 @@
 }
 
 .column:hover {
-  background-color: rgb(156, 156, 156);
+  background-color: #f5f5f5;
 }

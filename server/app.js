@@ -31,8 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //kopirovat ze stranky mongoosejs.com
 const mongoose = require('mongoose');
 mongoose
+//mongodb+srv://<username>:<heslo>@cluster0.ncmc5t2.mongodb.net/<dbname>?retryWrites=true&w=majority&appName=Cluster0
 //adresu najdeme na mongudb
-.connect('mongodb+srv://admin:adminadmin@cluster0.ncmc5t2.mongodb.net/pripravamat?retryWrites=true&w=majority')
+.connect('mongodb+srv://admin:adminadmin@cluster0.ncmc5t2.mongodb.net/mat?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => console.log("Database connected"))
 .catch((err) => console.log(err));
 

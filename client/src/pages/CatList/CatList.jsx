@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import CatLink from "./CatLink";
 import { useState, useEffect } from "react";
 import { getAllCats } from "../../models/Cat";
+import "./CatList.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function CatList() {
     const [cats, setCats] = useState();
@@ -37,15 +40,20 @@ export default function CatList() {
 
     return(
         <>
-        <h1>Cat list form</h1>
+        <div className="CatListContainer">
+                <div className="cat-title-container">
+                <h1 className="title is-1">Cat list form</h1>
+                </div>
+        
         {
             cats.map((cat, index) => (
-                <CatLink key={index} name={cat.name} id={cat._id} />
+                <CatLink className="cat-container" key={index} name={cat.name} id={cat._id} />
             ))
         }
         <Link to={"/"}>
-            <p>Go back</p>
+            <FontAwesomeIcon icon={faArrowLeft} size="2x" color="black"/>
         </Link>
+        </div>
         </>
     )
 }

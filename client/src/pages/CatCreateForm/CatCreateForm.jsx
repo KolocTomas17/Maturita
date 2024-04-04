@@ -51,7 +51,7 @@ export default function CatCreateForm() {
                         <div className="form-controls">
 
                             <Link to={"/"}>
-                                <FontAwesomeIcon className="icon" icon={faArrowLeft} />
+                                <FontAwesomeIcon size="2x" color="black" icon={faArrowLeft} />
                             </Link>
                             <button className="button is-light" onClick={handlePost}>
                                 Create cat

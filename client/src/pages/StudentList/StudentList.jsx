@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import StudentLink from "./StudentLink";
 import { useState, useEffect } from "react";
+import "./StudentList.css";
 import { getAllStudents } from "../../models/Student";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function StudentList() {
     const [students, setStudents] = useState();
@@ -37,15 +40,20 @@ export default function StudentList() {
 
     return(
         <>
+        <div className="StudentListContainer">
+                <div className="student-title-container">
+                <h1 className="title is-1">Cat list form</h1>
+                </div>
         <h1>Student list form</h1>
         {
             students.map((student, index) => (
-                <StudentLink key={index} name={student.name} id={student._id} />
+                <StudentLink className="student-container" key={index} name={student.name} id={student._id} />
             ))
         }
         <Link to={"/"}>
-            <p>Go back</p>
+        <FontAwesomeIcon icon={faArrowLeft} size="2x" color="black"/>
         </Link>
+        </div>
         </>
     )
 }
