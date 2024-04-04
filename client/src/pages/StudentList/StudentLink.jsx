@@ -4,9 +4,9 @@ export default function StudentLink(props) {
 
     return(
         <>
-        <div className="box">
-            <p>Name: {props.name}</p>
-            <Link to={`/student/${props.id}`}>
+        <div className="box studentbox">
+            <p className="subtitle">Name: {props.name}</p>
+            <Link className="student-container" to={`/student/${props.id}`}>
                 <p>View student</p>
             </Link>
             </div>

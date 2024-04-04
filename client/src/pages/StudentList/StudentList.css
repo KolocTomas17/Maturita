@@ -1,20 +1,23 @@
 .StudentListContainer {
-    display: block;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    padding: 250px;
+    padding: 50px;
+    max-width: 80rem;
 }
 
-.student-title-container {
+  .title {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-}
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
 
-
-
-.student-container {
+  .student-container {
     background-color: rgb(206, 206, 206);
     border-radius: 10px;
     border: 1px solid black;
@@ -22,11 +25,30 @@
     margin: 5px;
     display: block;
     padding: 10px;
-    max-width: 7rem;
     align-items: center;
     text-align: center;
-}
-
-.student-container:hover {
+  }
+  
+  .student-container:hover {
     background-color: #f5f5f5;
-}
+  }
+
+  .studentbox {
+    width: 15rem;
+    display: block;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .studentIcon {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+  }
+
+  .studentIcon:hover {
+    font-size: 15px;
+  }
