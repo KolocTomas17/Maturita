@@ -6,7 +6,7 @@ export default function MainPage() {
         <>
             <div className="container">
                 <div className="title-container">
-                    <h1 className="tittle">Zvol operaci</h1>
+                    <h1 className="title is-1">Zvol operaci</h1>
                 </div>
                 <div className="columns">
                     <Link className="column" to={"/createcat"}>

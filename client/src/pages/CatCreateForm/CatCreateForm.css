@@ -1,51 +1,46 @@
-
-
 .cat-create-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    
-  }
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
 
-  .tittle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  
-  .cat-create-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-  }
-  
-  .cat-create-form label {
-    margin-bottom: 10px;
-  }
-  
-  .cat-create-form input[type="text"],
-  .cat-create-form input[type="number"] {
-    padding: 10px;
-    margin-bottom: 20px;
-    width: 500px;
-    border-radius: 5px;
-    background-color: rgb(62, 62, 62);
-  }
-  
-  .cat-create-form button {
-    padding: 10px 20px;
-    background-color: transparent;
-    color: black;
-    border: 1px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .cat-create-form button:hover {
-    background-color: #c1ffc4;
-  }
+.input {
+  margin: 5px;
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.form-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .5rem;
+}
+
+.form-controls * {
+  margin-inline: .5rem;
+}
+
+.button {
+  background-color: rgb(206, 206, 206);
+  border-radius: 10px;
+  border: 1px solid black;
+  color: black;
+  margin: 5px;
+}
+
+.button:hover {
+  background-color: rgb(156, 156, 156);
+}
+
+.icon {
+  color: black;
+}

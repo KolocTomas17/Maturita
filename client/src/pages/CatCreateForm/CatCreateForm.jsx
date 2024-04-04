@@ -2,6 +2,9 @@ import { Link, redirect, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { createCat } from "../../models/Cat";
 import './CatCreateForm.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function CatCreateForm() {
     //useState - vytvoreni promenne v reactu
@@ -31,31 +34,36 @@ export default function CatCreateForm() {
     };
 
 
-    return(
+    return (
         //zmenit obsah u maturity
         <>
 
+            <div className="container">
+                <div className="title-container">
+                    <h1 className="title is-1">Cat create form</h1>
+                </div>
+                <div className="cat-create-form">
+                    <form className="form">
 
-        <h1 className="tittle">Cat create form</h1>
-        <div className="cat-create-form">
-        <form>
-            
-            <input className="input is-rounded" type="text" required name="name" placeholder="Enter name" onChange={e => handleChange(e)} />
-            <input className="input is-rounded" type="number" required name="legs" placeholder="Enter number of legs" onChange={e => handleChange(e)} />
-            <input className="input is-rounded" type="text" required name="color" placeholder="Enter color"  onChange={e => handleChange(e)}/>
-            <button className="button is-light" onClick={handlePost}>
-                Create cat
-            </button>
-        </form>
-        <p>{info}</p>
+                        <input className="input is-rounded" type="text" required name="name" placeholder="Enter name" onChange={e => handleChange(e)} />
+                        <input className="input is-rounded" type="number" required name="legs" placeholder="Enter number of legs" onChange={e => handleChange(e)} />
+                        <input className="input is-rounded" type="text" required name="color" placeholder="Enter color" onChange={e => handleChange(e)} />
+                        <div className="form-controls">
 
-        <Link to={"/"}>
+                            <Link to={"/"}>
+                                <FontAwesomeIcon className="icon" icon={faArrowLeft} />
+                            </Link>
+                            <button className="button is-light" onClick={handlePost}>
+                                Create cat
+                            </button>
+                        </div>
+                    </form>
+                    <p>{info}</p>
 
-            <p>Go back</p>
-        </Link>
-        </div>
 
-       
+                </div>
+            </div>
+
         </>
     )
 }
