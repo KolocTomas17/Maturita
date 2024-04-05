@@ -17,14 +17,16 @@
 }
 
 .column {
-  background-color: rgb(206, 206, 206);
-  border-radius: 10px;
-  border: 1px solid black;
   color: black;
   margin: 5px;
   text-align: center;
 }
 
-.column:hover {
-  background-color: #f5f5f5;
+.boxes {
+  display: flex;
+  max-width: 25rem;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
