@@ -1,0 +1,50 @@
+
+
+.podnikatel-update-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    
+  }
+
+  .tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  
+  .podnikatel-update-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .podnikatel-update-form label {
+    margin-bottom: 10px;
+  }
+  
+  .podnikatel-update-form input[type="text"],
+  .podnikatel-update-form input[type="number"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 500px;
+    border-radius: 5px;
+    background-color: rgb(62, 62, 62);
+  }
+  
+  .podnikatel-update-form button {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .podnikatel-update-form button:hover {
+    background-color: #c1ffc4;
+  }

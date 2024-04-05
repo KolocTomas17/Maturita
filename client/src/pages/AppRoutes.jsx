@@ -14,6 +14,13 @@ import StudentUpdateForm from "./StudentUpdateForm/StudentUpdateForm";
 import CreatedStudent from "./StudentCreateForm/CreatedStudent";
 import StudentDeleted from "./StudentView/StudentDeleted";
 
+import PodnikatelView from "./PodnikatelView/PodnikatelView";
+import PodnikatelList from "./PodnikatelList/PodnikatelList";
+import PodnikatelCreateForm from "./PodnikatelCreateForm/PodnikatelCreateForm";
+import PodnikatelUpdateForm from "./PodnikatelUpdateForm/PodnikatelUpdateForm";
+import CreatedPodnikatel from "./PodnikatelCreateForm/CreatedPodnikatel";
+import PodnikatelDeleted from "./PodnikatelView/PodnikatelDeleted";
+
 export default function AppRouters() {
     return(
         <BrowserRouter>
@@ -32,6 +39,13 @@ export default function AppRouters() {
                 <Route path="/updatestudent/:id" element={<StudentUpdateForm />} />
                 <Route path="/createdstudent/:id" element={<CreatedStudent />} />
                 <Route path="/deletedstudent/:id" element={<StudentDeleted />} />
+
+                <Route path="/podnikatel/:id" element={<PodnikatelView />} />
+                <Route path="/podnikatels" element={<PodnikatelList />} />
+                <Route path="/createpodnikatel" element={<PodnikatelCreateForm />} />
+                <Route path="/updatepodnikatel/:id" element={<PodnikatelUpdateForm />} />
+                <Route path="/createdpodnikatel/:id" element={<CreatedPodnikatel />} />
+                <Route path="/deletedpodnikatel/:id" element={<PodnikatelDeleted />} />
             </Routes>  
         </BrowserRouter>
     )

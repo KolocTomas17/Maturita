@@ -5,10 +5,10 @@ export default function MainPage() {
     return (
         <>
             <div className="container">
-                <div className="title-container">
+                <div className="title-container ">
                     <h1 className="title is-1">Zvol operaci</h1>
                 </div>
-                <div className="columns">
+                <div className="columns main-container">
                     <Link className="column" to={"/createcat"}>
                         <p>Cat create form</p>
                     </Link>
@@ -21,6 +21,14 @@ export default function MainPage() {
                     <Link className="column" to={"/students"}>
                         <p>Student list</p>
                     </Link>
+
+                    <Link className="column" to={"/createpodnikatel"}>
+                        <p>Podnikatel create form</p>
+                    </Link>
+                    <Link className="column" to={"/podnikatels"}>
+                        <p>Podnikatel list</p>
+                    </Link>
+                    
                 </div>
             </div>
         </>

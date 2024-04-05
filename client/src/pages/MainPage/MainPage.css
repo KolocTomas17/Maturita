@@ -1,10 +1,7 @@
 .container {
   display: block;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto;
   padding: 100px;
-  outline: none;
 }
 
 .title {
@@ -25,6 +22,7 @@
   border: 1px solid black;
   color: black;
   margin: 5px;
+  text-align: center;
 }
 
 .column:hover {
