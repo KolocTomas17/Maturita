@@ -1,35 +1,35 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { getPodnikatelById, deletePodnikatel } from "../../models/Podnikatel";
+import { getCarById, deleteCar } from "../../models/Car";
 import { useEffect, useState } from "react";
 
-export default function PodnikatelView() {
+export default function CarView() {
     const { id } = useParams();
-    const [podnikatel, setPodnikatel] = useState();
+    const [car, setCar] = useState();
     const [loaded, setLoaded] = useState();
     const [FormData, setFormData] = useState();
     const navigate = useNavigate();
     const [info, setInfo] = useState();
 
     const load = async () => {
-        const data = await getPodnikatelById(id);
+        const data = await getCarById(id);
         if(data.status === 500 || data.status === 404) return setLoaded(null);
         if(data.status === 200) {
-            setPodnikatel(data.payload);
+            setCar(data.payload);
             setLoaded(true);
         }
     }
 
     const handleDelete = async (e) => {
         e.preventDefault();
-        if(FormData === podnikatel.name) {
-            const result = await deletePodnikatel(id);
+        if(FormData === car.name) {
+            const result = await deleteCar(id);
             if(result.status === 200){
                 redirect(id);
             } else {
                 setInfo(result.msg);
             }
         } else {
-            setInfo("Wrong podnikatel name");
+            setInfo("Wrong car name");
         }
     }
 
@@ -38,7 +38,7 @@ export default function PodnikatelView() {
     }
 
     const redirect = (id) => {
-        return navigate(`/deletedpodnikatel/${id}`);
+        return navigate(`/deletedcar/${id}`);
     }
 
 
@@ -50,7 +50,7 @@ export default function PodnikatelView() {
     if (loaded === null) {
         return (
             <>
-            <p>Podnikatel not found</p>
+            <p>Car not found</p>
             </>
         )
     }
@@ -58,31 +58,32 @@ export default function PodnikatelView() {
     if (!loaded) {
         return (
             <>
-                <p>Loading podnikatel...</p>
+                <p>Loading car...</p>
             </>
         )
     }
 
     return(
         <>
-        <h1>Podnikatel view form</h1>
-        <p>Podnikatel id: {id}</p>
-        <p>Podnikatel name: {podnikatel.name}</p>
-        <p>Podnikatel age: {podnikatel.age}</p>
-        <p>Podnikatel company_name: {podnikatel.company_name}</p>
-        <p>Podnikatel money: {podnikatel.money} KČ</p>
+        <h1>Car view form</h1>
+        <p>Car id: {id}</p>
+        <p>Car name: {car.name}</p>
+        <p>Car color: {car.color}</p>
+        <p>Car type: {car.type}</p>
+        <p>Car horse power: {car.hp}</p>
+        <p>Car price: {car.price} KČ</p>
         <form>
             <p>
-                Napište jméno podnikatele pro smazání podnikatele
+                Napište jméno auta pro smazání auta
             </p>
-            <input type="text" placeholder={podnikatel.name} onChange={handleChange} />
-            <button className="button is-light" onClick={handleDelete}>Smazat podnikatele</button>
+            <input type="text" placeholder={car.name} onChange={handleChange} />
+            <button className="button is-light" onClick={handleDelete}>Smazat auto</button>
             <p>
                 {info}
             </p>
         </form>
-        <Link to={`/updatepodnikatel/${id}`}>
-        <p>Update Podnikatel</p>
+        <Link to={`/updatecar/${id}`}>
+        <p>Update Car</p>
         </Link>
         <Link to={"/"}>
             <p>Go back</p>

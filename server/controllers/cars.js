@@ -1,4 +1,4 @@
-const Cat = require("../models/cats");
+const Car = require("../models/cars");
 
 
 /*This function retrieves all cats from the database. 
@@ -6,16 +6,16 @@ It uses the Cat.find() method to fetch all cat documents.
 If cats are found, it returns a HTTP status code of 200 with a message "Cats found!" and the cat data in the response payload. 
 If no cats are found, it returns a HTTP status code of 404 with a message "Cats not found".
 */
-exports.getAllCats = async (req, res) => {
+exports.getAllCars = async (req, res) => {
   try {
-      const result = await Cat.find();
+      const result = await Car.find();
       if (result && result.length !== 0) {
         return res.status(200).send({
-          msg: "Cats found!",
+          msg: "Cars found!",
           payload: result,
         });
       }
-      res.status(404).send({ msg: "Cats not found"});
+      res.status(404).send({ msg: "Cars not found"});
   } catch (error) {
     res.status(500).send(error);
   }
@@ -28,16 +28,16 @@ exports.getAllCats = async (req, res) => {
   If the cat is found, it returns a HTTP status code of 200 with a message "Cat found!" and the cat data in the response payload. 
   If the cat is not found, it returns a HTTP status code of 404 with a message "Cat not found"
   */
-  exports.getCatById = async (req, res) => {
+  exports.getCarById = async (req, res) => {
     try {
-      const result = await Cat.findById(req.params.id);
+      const result = await Car.findById(req.params.id);
       if (result) {
         return res.status(200).send({
-          msg: "Cat found!",
+          msg: "Car found!",
           payload: result,
         });
       }
-      res.status(404).send({ msg: "Cat not found"});
+      res.status(404).send({ msg: "Car not found"});
     } catch (error) {
       res.status(500).send(error);
     }
@@ -50,12 +50,12 @@ It uses the Cat.findByIdAndDelete() method to delete the cat document.
 If the cat is found and deleted, it returns a HTTP status code of 200 with a message 
 "Cat deleted!". If something goes wrong, it returns a HTTP status code of 500 with a message "Something went wrong :(".
 */
-  exports.deleteCat = async (req, res) => {
+  exports.deleteCar = async (req, res) => {
     try {
-      const result = await Cat.findByIdAndDelete(req.params.id);
+      const result = await Car.findByIdAndDelete(req.params.id);
       if (result) {
         return res.status(200).send({
-          msg: "Cat deleted!",
+          msg: "Car deleted!",
         });
       }
       res.status(500).send("Something went wrong :(");
@@ -73,23 +73,26 @@ If the cat is found and deleted, it returns a HTTP status code of 200 with a mes
   If the cat is not found, it returns a HTTP status code of 500 with a message "Cat was not updated".
   
   */
-  exports.updateCat = async (req, res) => {
+  exports.updateCar = async (req, res) => {
     try {
       const data = ({
         name: req.body.name,
-        legs: req.body.legs,
         color: req.body.color,
+        type: req.body.type,
+        hp: req.body.hp,
+        price: req.body.price,
+        
       });
 
-      const result = await Cat.findByIdAndUpdate(req.params.id, data);
+      const result = await Car.findByIdAndUpdate(req.params.id, data);
       if (result) {
         return res.status(200).send({
-          msg: "Cat updated",
+          msg: "Car updated",
           payload: result
         });
       }
       res.status(500).send({
-        msg: "Cat was not updated"
+        msg: "Car was not updated"
       });
     } catch (error) {
       res.status(500).send(error);
@@ -105,23 +108,25 @@ If the cat is found and deleted, it returns a HTTP status code of 200 with a mes
   If the cat is created, it returns a HTTP status code of 201 with a message "Cat created" and the new cat data in the response payload. 
   If the cat is not created, it returns a HTTP status code of 500 with a message "Cat was not created".
   */
-  exports.createCat = async (req, res) => {
+  exports.createCar = async (req, res) => {
     try {
-      const data = new Cat({
+      const data = new Car({
         name: req.body.name,
-        legs: req.body.legs,
         color: req.body.color,
+        type: req.body.type,
+        hp: req.body.hp,
+        price: req.body.price,
       });
       //await - dokavad se to neprovede
       const result = await data.save();
       if (result) {
         return res.status(201).send({
-          msg: "Cat created",
+          msg: "Car created",
           payload: result
         });
       }
       res.status(500).send({
-        msg: "Cat was not created"
+        msg: "Car was not created"
       });
     } catch (error) {
       res.status(500).send(error);

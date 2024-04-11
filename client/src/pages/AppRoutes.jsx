@@ -21,6 +21,13 @@ import PodnikatelUpdateForm from "./PodnikatelUpdateForm/PodnikatelUpdateForm";
 import CreatedPodnikatel from "./PodnikatelCreateForm/CreatedPodnikatel";
 import PodnikatelDeleted from "./PodnikatelView/PodnikatelDeleted";
 
+import CarView from "./CarView/CarView";
+import CarList from "./CarList/CarList";
+import CarCreateForm from "./CarCreateForm/CarCreateForm";
+import CarUpdateForm from "./CarUpdateForm/CarUpdateForm";
+import CreatedCar from "./CarCreateForm/CreatedCar";
+import CarDeleted from "./CarView/CarDeleted";
+
 export default function AppRouters() {
     return(
         <BrowserRouter>
@@ -46,6 +53,13 @@ export default function AppRouters() {
                 <Route path="/updatepodnikatel/:id" element={<PodnikatelUpdateForm />} />
                 <Route path="/createdpodnikatel/:id" element={<CreatedPodnikatel />} />
                 <Route path="/deletedpodnikatel/:id" element={<PodnikatelDeleted />} />
+
+                <Route path="/car/:id" element={<CarView />} />
+                <Route path="/cars" element={<CarList />} />
+                <Route path="/createcar" element={<CarCreateForm />} />
+                <Route path="/updatecar/:id" element={<CarUpdateForm />} />
+                <Route path="/createdcar/:id" element={<CreatedCar />} />
+                <Route path="/deletedcar/:id" element={<CarDeleted />} />
             </Routes>  
         </BrowserRouter>
     )

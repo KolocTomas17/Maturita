@@ -93,6 +93,30 @@ export default function MainPage() {
               </Select>
             </FormControl>
           </Box>
+
+          <Box sx={{ minWidth: 200 }}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Car</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={info}
+                label="Car"
+                onChange={handleChange}
+              >
+                <MenuItem value={10}>
+                  <Link className="column" to={"/createcar"}>
+                    <p>Car create form</p>
+                  </Link>
+                </MenuItem>
+                <MenuItem value={20}>
+                  <Link className="column" to={"/cars"}>
+                    <p>Car list</p>
+                  </Link>
+                </MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
         </div>
       </div>
     </>

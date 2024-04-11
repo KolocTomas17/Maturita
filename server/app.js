@@ -13,6 +13,7 @@ var usersRouter = require('./routes/users');
 var catsRouter = require('./routes/cats');
 var studentsRouter = require('./routes/students');
 var podnikatelsRouter = require('./routes/podnikatels');
+var carsRouter = require('./routes/cars');
 
 //zajima nas
 var app = express();
@@ -46,6 +47,7 @@ app.use('/users', usersRouter);
 app.use('/cats', catsRouter);
 app.use('/students', studentsRouter);
 app.use('/podnikatels', podnikatelsRouter);
+app.use('/cars', carsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
