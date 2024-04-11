@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./MainPage.css";
+
 import * as React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
@@ -21,14 +22,14 @@ export default function MainPage() {
         </div>
 
         <div className="boxes">
-          <Box sx={{ minWidth: 120 }}>
+          <Box sx={{ minWidth: 200 }}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Cat</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={info}
-                label="Info"
+                label="Cat"
                 onChange={handleChange}
               >
                 <MenuItem value={10}>
@@ -45,14 +46,14 @@ export default function MainPage() {
             </FormControl>
           </Box>
 
-          <Box sx={{ minWidth: 120 }}>
+          <Box sx={{ minWidth: 200 }}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Student</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={info}
-                label="Info"
+                label="Student"
                 onChange={handleChange}
               >
                 <MenuItem value={10}>
@@ -69,14 +70,14 @@ export default function MainPage() {
             </FormControl>
           </Box>
 
-          <Box sx={{ minWidth: 120 }}>
+          <Box sx={{ minWidth: 200 }}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Podnikatel</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={info}
-                label="Info"
+                label="Podnikatel"
                 onChange={handleChange}
               >
                 <MenuItem value={10}>
